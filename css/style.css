@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Ubuntu:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --red-color: #ff0000;
+    --black-color1: #000;
+    --black-color2: #111;
+    --white-color: #fff;
+    --light-color: #aaa;
+}
+body{
+    min-height: 100vh;
+    background-color: var(--black-color1);
+    font-family: 'Nunito', sans-serif;
+}
+section{
+    padding: 2rem 3rem;
+}
+.btn{
+    text-decoration: none;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .5rem 1.2rem;
+    background: linear-gradient(130deg, var(--red-color) 93%, transparent 90%);
+    color: var(--white-color);
+    font-size: 1rem;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+
+/* Navigation bar */
+header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--black-color1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+header .logo{
+    font-size: 1.5rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+header .logo .my{
+    color: var(--red-color);
+    font-weight: 700;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li a{
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    color: var(--white-color);
+    text-transform: capitalize;
+    transition: .3s;
+}
+header ul li a:hover{
+    background-color: var(--red-color);
+}
+header .iconMenu{
+    display: none;
+    font-size: 1.8rem;
+    color: var(--white-color);
+}
+
+/* Home */
+section.home{
+    padding: 0;
+}
+section.home .slide{
+    min-height: 70vh;
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex;
+    padding: 2rem 3rem;
+    align-items: center;
+}
+section.home .content{
+    margin-top: 10rem;
+}
+section.home .content span{
+    font-size: 1.2rem;
+    color: var(--red-color);
+    display: block;
+}
+section.home .content h3{
+    font-size: 2.5rem;
+    color: var(--white-color);
+    padding: 1rem 0;
+}
+.swiper-pagination-bullet{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--white-color);
+    border-radius: 0;
+} 
+.swiper-pagination-bullet-active{
+    background-color: var(--red-color);
+}
+
+
+/* About */
+section.about{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem 3rem;
+    color: var(--white-color);
+    align-items: center;
+}
+section.about .image{
+    position: relative;
+}
+section.about .image::before,
+section.about .image::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: var(--red-color);
+    z-index: -1;
+}
+section.about .image::before{
+    top: -10px;
+    left: -10px;
+}
+section.about .image::after{
+    bottom: -10px;
+    right: -10px;
+}
+section.about .image img{
+    width: 100%;
+    height: 100%;
+}
+section.about .content span,
+.pricing .pricingPlan span,
+.trainer .dataTrainer .title,
+.joinUs .title,
+.testimonials .boxTestimonial .title{
+    color: var(--red-color);
+    font-weight: 500;
+}
+section.about .content .title,
+.pricing .pricingPlan .title{
+    font-size: 2rem;
+}
+section.about .content .boxContent{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 20px 0;
+}
+section.about .content h3:nth-child(1){
+    font-size: 1.1rem;
+}
+section.about .content h3:nth-child(1) ion-icon{
+    color: var(--red-color);
+}
+
+/*Features*/
+.features{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.features .titleFeatures,
+.trainers .titleTrainers,
+.blogs .titleBlogs{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.features .titleFeatures span,
+.trainers .titleTrainers span,
+.blogs .titleBlogs span{
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid var(--light-color);
+    border-radius: 5px;
+    color: var(--red-color);
+    font-weight: 600;
+    background-color: var(--black-color1);
+}
+.features .titleFeatures span::before,
+.trainers .titleTrainers span::before,
+.blogs .titleBlogs span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-color);
+    top: 45%;
+    left: 0;
+    z-index: -1;
+}
+.features .contentFeatures{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: var(--black-color2);
+    color: var(--white-color);
+}
+.features .contentFeatures .box{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.features .contentFeatures .box .img1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform .2s;
+}
+.contentFeatures .box .img1:hover{
+    transform: scale(1.03);
+}
+.features .contentFeatures .box .img2{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 1rem;
+    filter: invert(1);
+}
+.features .contentFeatures .box .inbox{
+    padding: 1rem;
+    text-align: center;
+}
+.box .inbox .titleInbox{
+    text-align: center;
+    font-size: 1rem;
+    color: var(--red-color);
+}
+
+/*Pricing*/
+.pricing{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.pricing .pricingPlan,
+.basicPlan{
+    color: var(--white-color);
+    padding: 1rem;
+}
+.basicPlan{
+    text-align: center; 
+}
+.basicPlan:nth-child(2){
+    background: linear-gradient(130deg, var(--black-color2) 93%, transparent 90%);
+}
+.pricing .pricingPlan .contentPrincing p,
+.basicPlan .price{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.basicPlan .price span{
+    font-size: 3rem;
+    color: var(--red-color);
+}
+.contentPrincing ul li,
+.basicPlan ul li{
+    font-size: 1rem;
+    list-style: none;
+    margin-bottom: 1rem;
+} 
+.contentPrincing ul li ion-icon,
+.basicPlan ul li ion-icon{
+    color: var(--red-color);
+}
+
+/*Trainers Box*/
+.trainers .titleTrainers{
+    margin-bottom: 2rem;
+}
+.trainers .boxTrainers{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.trainers .boxTrainers .trainer{
+    width: 100%;
+    position: relative;
+}
+.trainers .boxTrainers .trainer img{
+    width: 100%;
+}
+.trainer .dataTrainer{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1rem;
+    background-color: var(--black-color2);
+}
+.trainer .dataTrainer p{
+    color: var(--white-color);
+    font-size: 1.3rem;
+    padding-bottom: .5rem;
+    font-weight: 600;
+}
+.trainer .dataTrainer .socialNetwork{
+    display: flex;
+    padding: 1rem 0 0 0;
+    border-top: 1px solid var(--white-color);
+    display: none;
+    transition: .2s;
+}
+.trainer .dataTrainer .socialNetwork li{
+    list-style: none;
+    margin-right: 1rem;
+}
+.trainer .dataTrainer .socialNetwork li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--white-color);
+    transition: display .2s;
+}
+.trainer .dataTrainer .socialNetwork li a:hover{
+    color: var(--red-color);
+}
+.trainer:hover .dataTrainer .socialNetwork{
+    display: flex;
+}
+/* Join Us */
+.joinUs{
+    width: 100%;
+    background-size: cover !important;
+}
+.joinUs .box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgba(3, 2, 2, 0.7);
+}
+.joinUs .content{
+    width: 50%;
+    text-align: center;
+    color: var(--white-color);
+}
+.joinUs div h3{
+    font-size: 1.5rem;
+}
+
+/* Testimonials */
+.testimonials{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1rem;
+    overflow: hidden;
+}
+.testimonials .boxTestimonial{
+    color: var(--white-color);
+}
+.testimonials .boxTestimonial h3{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+.testimonials .content2{
+    color: var(--white-color);
+}
+.testimonial{
+    width: 40%;
+    height: 150px;
+    padding: 1rem 1rem 0 1rem;
+    background: linear-gradient(130deg, var(--black-color2) 93%, transparent 90%);
+}
+.identityTestimonial{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 1rem;
+    padding-right:15%;
+}
+.profilTestimonial{
+    display: flex;
+    align-items: flex-start;
+}
+.profilTestimonial .nameT .job{
+    font-size: .8rem;
+    color: var(--red-color);
+}
+.profilTestimonial .img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: .5rem;
+}
+.profilTestimonial .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.identityTestimonial .printer{
+    display: block;
+    font-size: 3rem;
+    color: var(--red-color);
+}
+
+/* Blogs */
+.containerBlogs{
+    margin-top: 2rem;
+}
+.containerBlogs .contentSlide .slide{
+    background-color: var(--black-color2);
+    margin-bottom: 5rem;
+}
+.contentSlide .slide .img{
+    width: 100%;
+    height: 320px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+.contentSlide .slide .img:hover{
+    transform: scale(1.007);
+}
+.contentSlide .slide .img img{
+    width: 100%;
+    height: 100%;
+}
+.contentSlide .slide .content{
+    padding: 1rem;
+    color: var(--white-color);
+}
+.contentSlide .slide .content .blogHead{
+    display: flex;
+    color: var(--red-color);
+    font-size: .8rem;
+}
+.contentSlide .slide .content .blogHead .user{
+    padding-right: .5rem;
+    margin-right: .5rem;
+    border-right: 1px solid var(--white-color);
+    cursor: pointer;
+}
+.contentSlide .slide .content .titleBlog{
+    padding: 1rem 0;
+}
+
+/* Footer */
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--white-color);
+}
+.footer ul li{
+    padding: .5rem 0;
+    list-style: none;
+}
+.openHours ul li span{
+    color: var(--red-color);
+}
+.footer ul li a{
+    text-decoration: none;
+    color: var(--white-color);
+}
+.footer ul li a:hover{
+    color: var(--red-color);
+}
+.footer ul li a ion-icon{
+    color: var(--red-color);
+}
+.networkFooter a{
+    text-decoration: none;
+    color: var(--white-color);
+    display: inline-block;
+    margin-right: .5rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.networkFooter a:hover{
+    color: var(--red-color);
+}
+.newsletter h3{
+    margin-bottom: 1rem;
+}
+.newsletter input{
+    padding: .5rem;
+    background: transparent;
+    color: var(--white-color);
+    outline: none;
+    border: 1px solid var(--black-color2);
+}
+
+/* Media query */
+@media (max-width:870px){
+    .features .contentFeatures{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pricing{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .trainers .boxTrainers{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .testimonials{
+        grid-template-columns: 1fr;
+    }
+    .contentSlide .slide .img{
+        height: 250px;
+    }
+}
+@media (max-width:600px) {
+    header{
+        padding: 10px;
+    }
+    header .iconMenu{
+        display: initial;
+    }
+    header .iconMenu .close{
+        display: none;
+        transition: .2s;
+    }
+    header ul{
+        position: absolute;
+        display: block;
+        top: 105%;
+        left: 0;
+        width: 100%;
+        background-color: var(--black-color2);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path .2s;
+    }
+    header.active ul{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    header.active .iconMenu .open{
+        display: none;
+    }
+    header.active .iconMenu .close{
+        display: block;
+    }
+    section.home .slide{
+        padding: 1rem;
+    }
+    section.home .content span{
+        font-size: 1rem;
+    }
+    section.home .content h3{
+        font-size: 2rem;
+    }
+    section.about{
+        grid-template-columns: 1fr;
+    }
+    .features .contentFeatures{
+        grid-template-columns: 1fr;
+    }
+    .pricing{
+        grid-template-columns: 1fr;
+    }
+    .trainers .boxTrainers{
+        grid-template-columns: 1fr;
+    }
+    .testimonial{
+        width: 35%;
+    }
+    .contentSlide .slide .img{
+        height: auto;
+    }
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
