@@ -8,4 +8,6 @@ A static website fitness
 * Javascript
 
 ## 🎥 Demo
-`[](https://github.com/codesofC/fitness.github/assets/76754023/2fd66556-cf93-4d84-b81a-a7d4e0d06144)`
+
+https://github.com/codesofC/fitness.github/assets/76754023/3628adcf-2d6e-4d45-964f-ba62c81f37e7
+
